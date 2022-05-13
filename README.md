@@ -1,71 +1,28 @@
-# Getting Started with Create React App
+## Qual a diferença entre contexto e estado?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O contexto é um estado global que consigo compartilhar/fornecer por toda a minha aplicação.
 
-## Available Scripts
+O estato ele é responsavel apenas para o escopo lexíco da página onde ele foi criado.
 
-In the project directory, you can run:
+## Quais os benefícios de usar contexto?
 
-### `npm start`
+Antigamente antes do React implementar o Context API, o desenvolvedores usanvam bastante o conceito de Prop Drilling
+que seria o conceito de passar props para cada componente e isso dava muito problema pela questão de que alguns componentes
+que eu utilizava não precisava enxergar essa propriedade, mas era "meio que obrigado" a props. Já utilizando o contexto temos um
+desenvolvimento linear e sabemos que cada valor está em cada componente que precisamos e caso ocorra algum re-render sabemos que
+não vamos ter a perca de valores usando o context, mas na passagem de props sim (Passo por isso atualmente hoje no trabalho Prop Drilling)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Resuminado não preciso trafegar a minha informação para dentro de toda a árvore de componentes da aplicação;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Quais os benefícios de usar o estado?
 
-### `npm test`
+O benefícios de ter usar um useState na minha página, é que consigo ter um controle maior sobre os dados daquela página
+consigo armazenar os valores anteriores e também alterar esses valores como também acrescentar mais valores no meu valor atual.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Quais os Downsides de cada um?
 
-### `npm run build`
+useState -> Acredito que a desavantagem atual seria a questão de renderização da tela, caso você não saiba muito bem ter
+controle do seu state, ele pode causar um problema de renderização.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# challenge-stoom
+useContext -> Não consigo ver atualmente uma desvantagem sobre essa API do React, acredito que se não existir uma boa arquitetura para
+a utilização do context possa existir bastante problemas lá na frente.
